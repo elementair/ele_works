@@ -12,6 +12,8 @@
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/contador_seguidores.css">
+        <script type="text/javascript" src="js/contador_seguidores.js"></script>
         </head>
         <!-- FIN PRELOADER -->
 <body>
@@ -56,7 +58,8 @@
             cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
             proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
-    </div>
+            <span id="contador">COUNTDOW: <strong></strong></span>
+     </div>
 </div>
 
 </body>

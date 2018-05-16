@@ -1,0 +1,9 @@
+#contador {
+  width:140px;
+  display:inline-block;
+  margin:10px;
+  padding:5px 8px;
+  color:green;
+  background:#000;
+  border:outset 1px green;
+}
