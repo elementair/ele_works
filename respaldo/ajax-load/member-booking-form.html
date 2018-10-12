@@ -1,0 +1,126 @@
+<div class="modal-header bg-theme-colored">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <h4 class="modal-title text-white" id="myModalLabel">¡Agenda una cita!</h4>
+</div>
+<div class="p-40">
+  <!-- Booking Form Starts -->
+  <form id="booking_form" name="booking_form" class="" action="includes/booking.php" method="post">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="form-group">
+          <label><strong>Servicios:</strong></label>
+          <select name="booking_treatment" class="form-control" required>
+            <option value="">-- seleccionar --</option>
+            <option>Masajes</option>
+            <option>Servicios de spa</option>
+            <option>Tratamientos faciales</option>
+            <option>Faciales orgánicos</option>
+            <option>Aparatología de vanguardia</option>
+            <option>Tratamientos corporales</option>
+            <option>Corporales con aparatología</option>
+            <option>Estética</option>
+            <option>Barbería</option>
+            <option>Depilación con cera</option>
+            <option>Paquete 1</option>
+            <option>Paquete 2</option>
+            <option>Paquete 3</option>
+          </select>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="form-group">
+              <label><strong>Día:</strong></label>
+              <input type="text" placeholder="Dia" class="form-control date-picker" name="booking_arrival_date" required>
+            </div>
+          </div> 
+          
+        </div>
+        <div class="form-group">
+          <label><strong>Hora:</strong></label>
+          <input type="text" placeholder="Hora" class="form-control time-picker" name="booking_time" required>
+        </div>
+      <div class="col-sm-12">
+        <div class="form-group mb-20">
+          <label><strong>¿Nos visitas por?</strong></label>
+          <div class="radio mt-5">
+            <label class="radio-inline">
+              <input type="radio" value="Primera ocación" name="booking_stay_at" checked="">
+              Primera ocación </label>
+            <label class="radio-inline">
+              <input type="radio" value="Staying at Other Hotels" name="booking_stay_at">
+              Regularidad </label>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label><strong>Nombre:</strong></label>
+          <input type="text" placeholder="Nombre" name="booking_name" class="form-control" required>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label><strong>Número de Cliente:</strong></label>
+          <input type="text" placeholder="Numero de Cliente" name="booking_membership_number" class="form-control" required>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label><strong>Email:</strong></label>
+          <input type="text" placeholder="Email" name="booking_email" class="form-control" required>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label><strong>Tel:</strong></label>
+          <input type="text" placeholder="Número telefonico" name="booking_phone" class="form-control" required>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <div class="form-group">
+          <label><strong>Comentarios:</strong></label>
+          <textarea name="booking_comments" class="form-control"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="" />
+      <button type="submit" class="btn btn-dark btn-theme-colored btn-flat mr-5" data-loading-text="Estamos agendando tu cita...">Agendar</button>
+      <button type="reset" class="btn btn-default btn-flat btn-theme-colored">Limpiar formulario</button>
+    </div>
+  </form>
+
+  <!-- Booking Form Validation-->
+  <script type="text/javascript">
+    $("#booking_form").validate({
+      submitHandler: function(form) {
+        var form_btn = $(form).find('button[type="submit"]');
+        var form_result_div = '#form-result';
+        $(form_result_div).remove();
+        form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
+        var form_btn_old_msg = form_btn.html();
+        form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
+        $(form).ajaxSubmit({
+          dataType:  'json',
+          success: function(data) {
+            if( data.status == 'true' ) {
+              $(form).find('.form-control').val('');
+            }
+            form_btn.prop('disabled', false).html(form_btn_old_msg);
+            $(form_result_div).html(data.message).fadeIn('slow');
+            setTimeout(function(){ $(form_result_div).fadeOut('slow') }, 6000);
+          }
+        });
+      }
+    });
+  </script>
+  <!-- Booking Form Ends -->
+</div>
+<div class="modal-footer">
+</div>
+<!-- Footer Scripts -->
+<script>
+  //reload date and time picker
+  THEMEMASCOT.initialize.TM_datePicker();
+</script>

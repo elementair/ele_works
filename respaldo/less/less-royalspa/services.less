@@ -1,0 +1,67 @@
+/*
+ * Services.less
+ * -----------------------------------------------
+*/
+
+.services-items  {
+  position: relative;
+  .transition(all 0.5s ease);
+
+  &::before {
+    content: " ";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+  }
+
+  > div {
+    z-index: 1;
+    position: relative;
+  }
+
+  p {
+    letter-spacing: 1px;
+  }
+
+}
+
+.services-items  [class^="flaticon-"]::after,
+[class^="flaticon-"]::before {
+  // padding: 5px 20px 0;
+  color: white;
+  color: #fff;
+  font-size: 35px;
+  margin-left: 0;
+  padding-top: 5px;
+  line-height: 60px;
+}
+
+
+/*Services style2*/
+.service-items {
+
+  &.style2 {
+    border: 8px solid fade(@black, 05%);
+
+    .thumb {
+      width: 150px;
+      margin: 0 auto;
+      height: auto;
+
+      img {
+        margin-top: -78px;
+        border: 8px solid fade(@black, 15%);
+        .transition(all 0.2s ease);
+      }
+    }
+
+    &:hover img {
+      border-width: 6px;
+    }
+  }
+
+}
+ 

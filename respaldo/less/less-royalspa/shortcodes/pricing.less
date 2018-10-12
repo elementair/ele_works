@@ -1,0 +1,81 @@
+/*
+ * Shortcode: Pricing.less
+ * -----------------------------------------------
+*/
+
+.pricing-table {
+  text-align: center;
+  position: relative;
+
+.pricing-title {
+    left: 0;
+    right: 0;
+    margin: auto;
+    position: absolute;
+    text-transform: uppercase;
+    display: block;
+    top: -18px;
+    width: 45%;
+  }
+  
+  &:hover .price.hvr-pop {
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+    animation-name: hvr-pop;
+    animation-timing-function: linear;
+  }
+  
+  .thumb {
+    position: relative;
+  }
+  
+  .price {
+    border-radius: 100%;
+    color: #fff;
+    display: block;
+    height: 140px;
+    left: 0;
+    line-height: .5;
+    margin: auto;
+    bottom: -18px;
+    right: 0;
+    width: 140px;
+    padding-top: 48px;
+
+    .month {
+      font-size: 18px;
+    }
+  }
+
+  .table-list {
+    line-height: 2.9;
+    margin-bottom: 0;
+    padding-top: 40px;
+    text-align: center;
+  }
+
+  .btn {
+    display: block;
+  }
+
+}
+
+
+.triangle-left, 
+.triangle-right {
+  height: 0;
+  left: -18px;
+  position: absolute;
+  top: 0px;
+  .rotate(90deg);
+  width: 0;
+}
+
+.triangle-right {
+	.rotate(180deg);
+  left: auto;
+  right: -18px;
+}
+
+
+

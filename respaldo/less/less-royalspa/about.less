@@ -1,0 +1,79 @@
+/*
+ * About.less
+ * -----------------------------------------------
+*/
+
+/* Welcome */
+
+.features-item .thumb{
+	position: relative;
+}
+.features-item .thumb {
+	overflow: hidden;
+}
+.features-item .thumb::before {
+	content: " ";
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 0;
+	-webkit-transition: all .3s ease 0s;
+	-o-transition: all .3s ease 0s;
+	transition: all .3s ease 0s;
+}
+.features-item:hover .thumb-icon,
+.features-item:hover .thumb-icon,
+.features-item:hover .thumb::before,
+.features-item:hover .thumb-icon {
+	-webkit-transition: all .3s ease 0s;
+	-o-transition: all .3s ease 0s;
+	transition: all .3s ease 0s;
+    -webkit-transform: translate3d(0, -80px, 0);
+	transform: translate3d(0, -100px, 0);
+	opacity: 0;
+	 -webkit-animation: bounceY 0.9s linear;
+   -moz-animation: bounceY 0.9s linear;
+   -ms-animation: bounceY 0.9s linear;
+   animation: bounceY 0.9s linear;
+}
+.features-item .thumb-icon {
+	top: 28%;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+.features-item .details {
+	margin-top: 20px;
+}
+
+.features-health {
+	border: 10px solid rgba(173,216,230,.27);
+	margin-top: -150px;
+}
+
+/* Ad */
+
+.ad-img {
+	overflow: hidden;
+	position: relative;
+}
+.ad-offer {
+	position: absolute;
+	top: 15%; 
+	right: 10%;
+}
+
+.ad-img img {
+	-webkit-transition: all 0.5s ease 0s;
+    -ms-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
+}
+.ad-img:hover img{
+    -webkit-transform: scale(1.2) rotate(5deg);
+    -ms-transform: scale(1.2) rotate(5deg);
+    -o-transform: scale(1.2) rotate(5deg);
+    transform: scale(1.2) rotate(5deg);
+}

@@ -1,0 +1,51 @@
+/*
+ * Team.less
+ * -----------------------------------------------
+*/
+
+.expert:hover .member-info {
+	-webkit-transition: 3s, 5s, 2s, 1s;
+	-o-transition: 3s, 5s, 2s, 1s;
+	transition: 3s, 5s, 2s, 1s;
+}
+.triangle-down {
+    border-left: 60px solid rgba(0, 0, 0, 0);
+    border-right: 60px solid rgba(0, 0, 0, 0);
+    height: 0;
+    margin: 0 auto;
+    width: 0;
+}
+.expert:hover .member-info h5 a,.expert:hover .member-info h6 {
+	-webkit-transition: 0.5s;
+	-o-transition: 0.5s;
+	transition: 0.5s;
+}
+.expert:hover .member-info h5 a,
+.expert:hover .member-info h6 {
+	color: @white-base;
+}
+.member-thumb {
+	position: relative;
+}
+.member-thumb .triangle-down {
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: -20px;
+}
+.team-member:hover .member-thumb {
+	position: relative;
+}
+.expert:hover .triangle-down{
+	border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    -webkit-transition: 3s, 5s, 2s, 1s;
+	-o-transition: 3s, 5s, 2s, 1s;
+	transition: 3s, 5s, 2s, 1s;
+}
+
+
+/*Team Member style 2*/
+.expert.style2 .member-info,.expert.style2:hover .member-info {
+	background: transparent;
+}
